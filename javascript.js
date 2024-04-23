@@ -24,12 +24,14 @@ console.log(myLibrary)
 
 const display=document.querySelector('#display');
 
-//supposed to print the properties of each book(object)
+
 function displayBooks(){
     for(let i=0;i<myLibrary.length;i++){
     let content=document.createElement('div')
     content.classList.add('content');
-   content.textContent= /* don't know what to put here*/
+    
+   content.textContent= `Title:${myLibrary[i].title}, ${myLibrary[i].author}, ${myLibrary[i].pageNumber}, ${myLibrary[i].read} `
     display.appendChild(content)
     }
 }
+
