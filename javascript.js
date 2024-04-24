@@ -1,4 +1,4 @@
-const myLibrary=[];
+
 
 
 //object constructior
@@ -8,6 +8,12 @@ function Book(title,author,pageNumber,read){
     this.pageNumber=pageNumber;
     this.read=read;
 }
+
+let book1=new Book('The Hobbit', 'J.R.R. Tolkien', '255', 'read');
+let book2=new Book('Dune', 'Frank Hebert', '650', 'unread');
+
+
+const myLibrary=[book1, book2];
 
 let newBook
 //adds book to array
@@ -30,8 +36,9 @@ function displayBooks(){
     let content=document.createElement('div')
     content.classList.add('content');
     
-   content.textContent= `Title:${myLibrary[i].title}, ${myLibrary[i].author}, ${myLibrary[i].pageNumber}, ${myLibrary[i].read} `
+   content.textContent= `Title: ${myLibrary[i].title}, Author: ${myLibrary[i].author}, Pages: ${myLibrary[i].pageNumber}, Read Status: ${myLibrary[i].read} `
     display.appendChild(content)
     }
 }
 
+console.log(displayBooks())
