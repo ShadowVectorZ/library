@@ -36,7 +36,7 @@ content.appendChild(delButton)
 
 let statusButton=document.createElement('button')
 statusButton.classList.add('status-button')
-statusButton.textContent=`${myLibrary[i].read}`
+statusButton.textContent=`${newBook.read}`
 content.appendChild(statusButton)
  display.appendChild(content)
  
@@ -45,9 +45,12 @@ content.appendChild(statusButton)
     });
 }
 
+
 const display=document.querySelector('#display');
 
+
 function displayBooks(){
+    
     for(let i=0;i<myLibrary.length;i++){
     let content=document.createElement('div')
     content.classList.add('content');
@@ -64,6 +67,7 @@ content.appendChild(statusButton)
     delButton.addEventListener('click', () => {
         content.remove();
        });
+      
     }
 }
 
@@ -72,10 +76,12 @@ console.log(displayBooks())
 const addButton=document.querySelector('#new-book')
 addButton.addEventListener('click',addBookToLibrary)
 
+
 display.addEventListener("click", (event) => {
     if(event.target.innerText === 'read') {
       event.target.innerText='unread'
     }
+
     else if (event.target.innerText==='unread'){
         event.target.innerText='read'
     }
