@@ -6,16 +6,26 @@ function Book(title,author,pageNumber,read){
     this.read=read;
 }
 
-
-
-let delButton
-
-
 let book1=new Book('The Hobbit', 'J.R.R. Tolkien', '255', 'read');
 let book2=new Book('Dune', 'Frank Hebert', '650', 'unread');
 
-
 const myLibrary=[book1, book2];
+
+
+const dialog=document.querySelector('dialog')
+const showButton=document.querySelector('dialog+button')
+const closeButton=document.querySelector('dialog button')
+
+showButton.addEventListener('click',()=>{
+    dialog.showModal()
+})
+
+closeButton.addEventListener('click',()=>{
+    dialog.close()
+})
+
+
+
 
 /*need to switch prompts with something else, put title author eyc in the function */
 function addBookToLibrary(){
@@ -28,7 +38,7 @@ myLibrary.push(newBook)
 let content=document.createElement('div')
 content.classList.add('content');
 content.textContent= `Title: ${newBook.title}, Author: ${newBook.author}, Pages: ${newBook.pageNumber}, Read Status: ${newBook.read} `
- delButton=document.createElement('button')
+let delButton=document.createElement('button')
 delButton.classList.add('del-button')
 delButton.textContent='Delete'
 content.appendChild(delButton)
@@ -73,8 +83,8 @@ content.appendChild(statusButton)
 
 console.log(displayBooks())
 
-const addButton=document.querySelector('#new-book')
-addButton.addEventListener('click',addBookToLibrary)
+// const addButton=document.querySelector('#new-book')
+// addButton.addEventListener('click',addBookToLibrary)
 
 
 display.addEventListener("click", (event) => {
