@@ -37,15 +37,29 @@ function addBookToLibrary(){
  myLibrary.push(newBook)
  let content=document.createElement('div')
  content.classList.add('content');
- content.textContent= `Title: ${newBook.title}, Author: ${newBook.author}, Pages: ${newBook.pageNumber} `
+ let titleDiv=document.createElement('div')
+    titleDiv.classList.add('title')
+    titleDiv.textContent=`${newBook.title}`
+    content.appendChild(titleDiv)
+    let authorDiv=document.createElement('div')
+    authorDiv.classList.add('author')
+    authorDiv.textContent=`${newBook.author}`
+    content.appendChild(authorDiv)
+    let pagesDiv=document.createElement('div')
+    pagesDiv.classList.add('pages')
+    pagesDiv.textContent=`${newBook.pageNumber} pages`
+    content.appendChild(pagesDiv)
+    let buttonDiv=document.createElement('div')
+    buttonDiv.classList.add('button-div')
  let delButton=document.createElement('button')
  delButton.classList.add('del-button')
  delButton.textContent='Delete'
- content.appendChild(delButton)
+ buttonDiv.appendChild(delButton)
  let statusButton=document.createElement('button')
  statusButton.classList.add('status-button')
  statusButton.textContent=`${newBook.read}`
- content.appendChild(statusButton)
+ buttonDiv.appendChild(statusButton)
+ content.appendChild(buttonDiv)
  display.appendChild(content)
  delButton.addEventListener('click', () => {
      content.remove();
@@ -61,16 +75,30 @@ function displayBooks(){
     for(let i=0;i<myLibrary.length;i++){
     let content=document.createElement('div')
     content.classList.add('content');
-   content.textContent= `Title: ${myLibrary[i].title}, Author: ${myLibrary[i].author}, Pages: ${myLibrary[i].pageNumber}`
+    let titleDiv=document.createElement('div')
+    titleDiv.classList.add('title')
+    titleDiv.textContent=`${myLibrary[i].title}`
+    content.appendChild(titleDiv)
+    let authorDiv=document.createElement('div')
+    authorDiv.classList.add('author')
+    authorDiv.textContent=`${myLibrary[i].author}`
+    content.appendChild(authorDiv)
+    let pagesDiv=document.createElement('div')
+    pagesDiv.classList.add('pages')
+    pagesDiv.textContent=`${myLibrary[i].pageNumber} pages`
+    content.appendChild(pagesDiv)
+    let buttonDiv=document.createElement('div')
+    buttonDiv.classList.add('button-div')
    delButton=document.createElement('button')
    delButton.classList.add('del-button')
    delButton.textContent='Delete'
-   content.appendChild(delButton)
+   buttonDiv.appendChild(delButton)
    let statusButton=document.createElement('button')
 statusButton.classList.add('status-button')
 statusButton.textContent=`${myLibrary[i].read}`
-content.appendChild(statusButton)
-    display.appendChild(content)
+buttonDiv.appendChild(statusButton)
+content.appendChild(buttonDiv)    
+display.appendChild(content)
     delButton.addEventListener('click', () => {
         content.remove();
        });      
@@ -79,10 +107,10 @@ content.appendChild(statusButton)
 console.log(displayBooks())
 
 display.addEventListener("click", (event) => {
-    if(event.target.innerText === 'read') {
-      event.target.innerText='unread'
+    if(event.target.innerText === 'Read') {
+      event.target.innerText='Unread'
     }
-    else if (event.target.innerText==='unread'){
-        event.target.innerText='read'
+    else if (event.target.innerText==='Unread'){
+        event.target.innerText='Read'
     }
   })
