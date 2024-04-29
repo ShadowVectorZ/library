@@ -58,6 +58,11 @@ function addBookToLibrary(){
  let statusButton=document.createElement('button')
  statusButton.classList.add('status-button')
  statusButton.textContent=`${newBook.read}`
+ if(statusButton.textContent==='Read'){
+    statusButton.style.backgroundColor='green'
+    statusButton.style.color='white'
+}
+else(statusButton.style.backgroundColor='red')
  buttonDiv.appendChild(statusButton)
  content.appendChild(buttonDiv)
  display.appendChild(content)
@@ -96,6 +101,11 @@ function displayBooks(){
    let statusButton=document.createElement('button')
 statusButton.classList.add('status-button')
 statusButton.textContent=`${myLibrary[i].read}`
+if(statusButton.textContent==='Read'){
+    statusButton.style.backgroundColor='green'
+    statusButton.style.color='white'
+}
+else(statusButton.style.backgroundColor='red')
 buttonDiv.appendChild(statusButton)
 content.appendChild(buttonDiv)    
 display.appendChild(content)
@@ -109,8 +119,10 @@ console.log(displayBooks())
 display.addEventListener("click", (event) => {
     if(event.target.innerText === 'Read') {
       event.target.innerText='Unread'
+      event.target.style.backgroundColor='red'
     }
     else if (event.target.innerText==='Unread'){
         event.target.innerText='Read'
+        event.target.style.backgroundColor='green'
     }
   })
