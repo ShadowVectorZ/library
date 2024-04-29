@@ -12,6 +12,33 @@
     box-sizing:border-box;
     height:150px;
     width:150px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    /* gap:10px; */
+}
+
+
+.title{
+    color:black;
+    width:100%;
+    display:flex;
+    justify-content:center
+   
+}
+
+.author{
+    color:black;
+    width:100%;
+    display:flex;
+    justify-content:center
+   
+}
+
+.button-div{
+    display:flex;
+    gap:20px;
+    margin-bottom:3px
 }
 
 ::backdrop{
