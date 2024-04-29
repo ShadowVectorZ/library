@@ -7,8 +7,41 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <dialog>
-        <button>Close</button>
+    <dialog class="modal">
+        <form method="dialog">
+            <p>
+                <label for="book-title">
+                    Book Title:
+                    <input type="text" id='book-title' required/>
+                </label>
+            </p>
+            <p>
+                <label for="book-author">
+                    Author:
+                    <input type="text" id='book-author' required/>
+                </label>
+            </p>
+            <p>
+                <label for="page-number">
+                    Number of Pages:
+                    <input type="number" id='page-number' required/>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Have you read it?
+                    <select>
+                        <option>Unread</option>
+                        <option>Read</option>
+                    </select>
+                </label>
+            </p>
+            <div>
+                <input type="submit" id="confirm" value="Confirm"/>
+                <input type="submit" id="cancel" value="Cancel" formnovalidate/>
+            </div>
+        </form>
+       
     </dialog>
     <button id="new-book">Add New Book</button>
     
